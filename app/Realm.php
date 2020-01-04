@@ -59,8 +59,12 @@ class Realm extends Model
         $this->attributes['admin_name'] = encrypt($name);
     }
 
-    public function getAdminNameAttribute(string $encryptedValue): string
+    public function getAdminNameAttribute(?string $encryptedValue): ?string
     {
+        if (!$encryptedValue) {
+            return null;
+        }
+
         return decrypt($encryptedValue);
     }
 
@@ -69,8 +73,12 @@ class Realm extends Model
         $this->attributes['admin_password'] = encrypt($value);
     }
 
-    public function getAdminPasswordAttribute(string $encryptedValue): string
+    public function getAdminPasswordAttribute(?string $encryptedValue): ?string
     {
+        if (!$encryptedValue) {
+            return null;
+        }
+
         return decrypt($encryptedValue);
     }
 }

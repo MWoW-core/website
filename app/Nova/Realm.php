@@ -51,12 +51,12 @@ class Realm extends Resource
             ID::make()->sortable(),
 
             Text::make('Admin Name', 'admin_name')
-                ->resolveUsing(fn ($val) => decrypt($val))
+                ->resolveUsing(fn ($val) => $val ? decrypt($val) : null)
                 ->hideFromIndex(),
 
             Password::make('Admin Password', 'admin_password')
                 ->onlyOnForms()
-                ->resolveUsing(fn ($val) => decrypt($val))
+                ->resolveUsing(fn ($val) => $val ? decrypt($val) : null)
                 ->creationRules('required', 'string', 'min:8')
                 ->updateRules('nullable', 'string', 'min:8'),
 

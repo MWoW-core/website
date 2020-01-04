@@ -165,7 +165,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Vendor\DarkIcyTheme\ThemeServiceProvider::class,
 
         /*
          * Application Service Providers...

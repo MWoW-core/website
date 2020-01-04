@@ -60,7 +60,7 @@ class Server extends Model
         'ssh_port'
     ];
 
-    protected array $dispatchesEvents = [
+    protected $dispatchesEvents = [
         'created' => ServerCreated::class,
         'updated' => ServerUpdated::class,
         'deleted' => ServerDeleted::class,

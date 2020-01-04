@@ -38,7 +38,7 @@ class Task extends Model
         'exitcode' => 'integer'
     ];
 
-    protected array $dispatchesEvents = [
+    protected $dispatchesEvents = [
         'created' => TaskCreated::class,
         'updated' => TaskUpdated::class,
         'deleted' => TaskDeleted::class,

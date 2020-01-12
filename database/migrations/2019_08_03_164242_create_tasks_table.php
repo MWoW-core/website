@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->unsignedBigInteger('server_id');
             $table->foreign('server_id')->references('id')->on('servers');
             $table->string('script')->nullable();
-            $table->json('output')->nullable();
+            $table->text('output')->nullable();
             $table->integer('exitcode')->nullable();
             $table->timestamps();
         });
